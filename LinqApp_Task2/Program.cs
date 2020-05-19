@@ -143,7 +143,7 @@ namespace LinqApp_Level2
                              .GroupBy(actor => actor.Name, actor => data.OfType<Film>()
                              .Where(film => film.Actors.Contains(actor))
                              .Select(film => film.Name))
-                             .Select(gr => $" Actor : {gr.Key} - {string.Join("\n\t", gr.SelectMany(film => film))}")));
+                             .Select(gr => $" Actor : {gr.Key} - \n\t{string.Join("\n\t", gr.SelectMany(film => film))};")));
          
         }
 
